@@ -1,30 +1,37 @@
 # Scre
 
+<center>
+<image src="https://github.com/hotchemi/Scre/blob/master/images/icon.png" width="256">
+</center>
+
 A lightweight screen recorder macOS application written in SwiftUI.
 
+## Demo
+
+<center>
 <image src="https://github.com/hotchemi/Scre/blob/master/images/demo.gif">
+</center>
 
 ## Install
 
-### Download
+You can use [homebrew-cask](https://github.com/Homebrew/homebrew-cask) or download from [release](https://github.com/hotchemi/Scre/releases) page.
 
-Head over to the latest release and download attached gip file.
+```sh
+brew tap hotchemi/tap
+brew install scre
+```
 
-https://github.com/hotchemi/Scre/releases
+## Keyboard Shortcuts
 
-### Homebrew cask
-
-WIP
-
-## Keyboard shortcuts
-
-- `Command + s`: record/stop
+- `Command + s`: record/stop button
 - `Command + l`: Show other windows
-- `Command + ,`: Setting
+- `Command + ,`: Settings
 
 ## Settings
 
-<image src="https://github.com/hotchemi/Scre/blob/master/images/preference.png">
+<center>
+<image src="https://github.com/hotchemi/Scre/blob/master/images/preference.png" width="500">
+</center>
 
 - Always ask file path
   - if the option is false, we automatically save GIF file under `Movies` folder.
