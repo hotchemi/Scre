@@ -2,6 +2,7 @@ import SwiftUI
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     @AppStorage(Config.Key.windowFrame.rawValue) private var windowFrame = ""
+
     var window: NSWindow? {
         NSApplication.shared.windows.first
     }

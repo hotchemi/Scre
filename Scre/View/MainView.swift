@@ -8,6 +8,7 @@ struct MainView: View {
         case finish(URL?)
         case idle
     }
+    // TODO: move to ViewModel
     private let screenRecorder = ScreenRecorder()
     @AppStorage(Config.Key.location.rawValue) private var location = ""
     @AppStorage(Config.Key.alwaysAskFilePath.rawValue) private var alwaysAskFilePath = false
@@ -59,7 +60,8 @@ struct MainView: View {
                         isPresented: self.$showPopover,
                         arrowEdge: .bottom
                     ) {
-                        let windows = WindowManager.getWindows()
+                        // TODO: separate view
+                        let windows = WindowServer.getWindows()
                         let apps = windows.map { NSRunningApplication(processIdentifier: pid_t($0.pid)) }
                         List {
                             ForEach(0 ..< windows.count) { index in

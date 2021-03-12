@@ -17,16 +17,11 @@
 		9F3B5F8B25E28DB90084A6B9 /* ScreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5F8A25E28DB90084A6B9 /* ScreUITests.swift */; };
 		9F6037E025E4A7FB00CFA708 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6037DF25E4A7FB00CFA708 /* Config.swift */; };
 		9F6037E825E4A81A00CFA708 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6037E725E4A81A00CFA708 /* Utils.swift */; };
-		9F6429DF25F3C1D000CFCFFF /* PopUpPathControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6429DE25F3C1D000CFCFFF /* PopUpPathControl.swift */; };
-		9F6429E725F3C1F500CFCFFF /* PathMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6429E625F3C1F500CFCFFF /* PathMenuItem.swift */; };
-		9F6429EC25F3C22000CFCFFF /* PathControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6429EB25F3C22000CFCFFF /* PathControlDelegate.swift */; };
-		9F6429F125F3C25C00CFCFFF /* PathMenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6429F025F3C25C00CFCFFF /* PathMenuBuilder.swift */; };
-		9F6429F625F3C28100CFCFFF /* PathMenuItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6429F525F3C28100CFCFFF /* PathMenuItemConvertible.swift */; };
 		9F85967E25EBA86200A51B43 /* NSWindow+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F85967D25EBA86200A51B43 /* NSWindow+Extensions.swift */; };
 		9F93E6C425F2AE8D00B26C7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93E6C325F2AE8D00B26C7E /* SettingsView.swift */; };
 		9F9AD9C325F4CD6200F48B58 /* PixelSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AD9C225F4CD6200F48B58 /* PixelSize.swift */; };
 		9F9AD9C825F4D33700F48B58 /* FrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AD9C725F4D33700F48B58 /* FrameRate.swift */; };
-		9F9AD9DA25F50EC600F48B58 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AD9D925F50EC600F48B58 /* WindowManager.swift */; };
+		9F9AD9DA25F50EC600F48B58 /* WindowServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AD9D925F50EC600F48B58 /* WindowServer.swift */; };
 		9F9EDC2725F737C400EAFB35 /* TimerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9EDC2625F737C400EAFB35 /* TimerHolder.swift */; };
 		9FB3EF9425E4023500E88335 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3EF9325E4023500E88335 /* ScreenRecorder.swift */; };
 		9FB3EF9E25E4033700E88335 /* GIFConveter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3EF9D25E4033700E88335 /* GIFConveter.swift */; };
@@ -73,16 +68,11 @@
 		9F3B5F8C25E28DB90084A6B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F6037DF25E4A7FB00CFA708 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		9F6037E725E4A81A00CFA708 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		9F6429DE25F3C1D000CFCFFF /* PopUpPathControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpPathControl.swift; sourceTree = "<group>"; };
-		9F6429E625F3C1F500CFCFFF /* PathMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathMenuItem.swift; sourceTree = "<group>"; };
-		9F6429EB25F3C22000CFCFFF /* PathControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathControlDelegate.swift; sourceTree = "<group>"; };
-		9F6429F025F3C25C00CFCFFF /* PathMenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathMenuBuilder.swift; sourceTree = "<group>"; };
-		9F6429F525F3C28100CFCFFF /* PathMenuItemConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathMenuItemConvertible.swift; sourceTree = "<group>"; };
 		9F85967D25EBA86200A51B43 /* NSWindow+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+Extensions.swift"; sourceTree = "<group>"; };
 		9F93E6C325F2AE8D00B26C7E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9F9AD9C225F4CD6200F48B58 /* PixelSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelSize.swift; sourceTree = "<group>"; };
 		9F9AD9C725F4D33700F48B58 /* FrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameRate.swift; sourceTree = "<group>"; };
-		9F9AD9D925F50EC600F48B58 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		9F9AD9D925F50EC600F48B58 /* WindowServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowServer.swift; sourceTree = "<group>"; };
 		9F9EDC2625F737C400EAFB35 /* TimerHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHolder.swift; sourceTree = "<group>"; };
 		9FB3EF9325E4023500E88335 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
 		9FB3EF9D25E4033700E88335 /* GIFConveter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFConveter.swift; sourceTree = "<group>"; };
@@ -154,7 +144,6 @@
 		9F3B5F6B25E28DB80084A6B9 /* Scre */ = {
 			isa = PBXGroup;
 			children = (
-				9F6429DD25F3C1C400CFCFFF /* PathControl */,
 				9F6037DE25E4A7ED00CFA708 /* Util */,
 				9FB3EF9125E4021B00E88335 /* Model */,
 				9F26FE2C25E3ADEB0081BE31 /* View */,
@@ -200,21 +189,9 @@
 				9F6037DF25E4A7FB00CFA708 /* Config.swift */,
 				9F6037E725E4A81A00CFA708 /* Utils.swift */,
 				9F85967D25EBA86200A51B43 /* NSWindow+Extensions.swift */,
-				9F9AD9D925F50EC600F48B58 /* WindowManager.swift */,
+				9F9AD9D925F50EC600F48B58 /* WindowServer.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		9F6429DD25F3C1C400CFCFFF /* PathControl */ = {
-			isa = PBXGroup;
-			children = (
-				9F6429DE25F3C1D000CFCFFF /* PopUpPathControl.swift */,
-				9F6429E625F3C1F500CFCFFF /* PathMenuItem.swift */,
-				9F6429EB25F3C22000CFCFFF /* PathControlDelegate.swift */,
-				9F6429F025F3C25C00CFCFFF /* PathMenuBuilder.swift */,
-				9F6429F525F3C28100CFCFFF /* PathMenuItemConvertible.swift */,
-			);
-			path = PathControl;
 			sourceTree = "<group>";
 		};
 		9FB3EF9125E4021B00E88335 /* Model */ = {
@@ -489,22 +466,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F6429F625F3C28100CFCFFF /* PathMenuItemConvertible.swift in Sources */,
 				9F9AD9C825F4D33700F48B58 /* FrameRate.swift in Sources */,
 				9F26FE3425E3AE710081BE31 /* AppDelegate.swift in Sources */,
-				9F9AD9DA25F50EC600F48B58 /* WindowManager.swift in Sources */,
-				9F6429EC25F3C22000CFCFFF /* PathControlDelegate.swift in Sources */,
+				9F9AD9DA25F50EC600F48B58 /* WindowServer.swift in Sources */,
 				9F3B5F6F25E28DB80084A6B9 /* MainView.swift in Sources */,
 				9F85967E25EBA86200A51B43 /* NSWindow+Extensions.swift in Sources */,
-				9F6429F125F3C25C00CFCFFF /* PathMenuBuilder.swift in Sources */,
 				9F93E6C425F2AE8D00B26C7E /* SettingsView.swift in Sources */,
 				9F9EDC2725F737C400EAFB35 /* TimerHolder.swift in Sources */,
 				9F3B5F6D25E28DB80084A6B9 /* Application.swift in Sources */,
 				9F9AD9C325F4CD6200F48B58 /* PixelSize.swift in Sources */,
-				9F6429DF25F3C1D000CFCFFF /* PopUpPathControl.swift in Sources */,
 				9F6037E025E4A7FB00CFA708 /* Config.swift in Sources */,
 				9FB3EF9425E4023500E88335 /* ScreenRecorder.swift in Sources */,
-				9F6429E725F3C1F500CFCFFF /* PathMenuItem.swift in Sources */,
 				9FB3EF9E25E4033700E88335 /* GIFConveter.swift in Sources */,
 				9F6037E825E4A81A00CFA708 /* Utils.swift in Sources */,
 			);

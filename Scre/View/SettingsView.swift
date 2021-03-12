@@ -7,6 +7,7 @@ struct SettingsView: View {
 }
 
 struct GeneralSettingsView: View {
+    // TODO: move to ViewModel
     @AppStorage(Config.Key.alwaysAskFilePath.rawValue) private var alwaysAskFilePath = false
     @AppStorage(Config.Key.mouseButtonPress.rawValue) private var mouseButtonPress = true
     @AppStorage(Config.Key.repeatAllowed.rawValue) private var repeatAllowed = true

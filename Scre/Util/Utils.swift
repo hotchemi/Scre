@@ -7,10 +7,6 @@ struct Utils {
         return formatter
     }()
     
-    static func fileExists(path: String, isDirectory: Bool) -> Bool {
-        return FileManager.default.fileExists(atPath: path)
-    }
-    
     static func recordFrame(window: NSWindow?) -> CGRect {
         guard let window = window else {
             return CGRect.zero

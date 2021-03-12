@@ -1,6 +1,6 @@
 import Foundation
 
-struct WindowManager {
+struct WindowServer {
     struct Window {
         let pid: Int
         let x: Int
