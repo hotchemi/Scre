@@ -22,6 +22,7 @@ final class ScreenRecorder: NSObject {
             return
         }
         if let preset = config.sessionPreset {
+            input.scaleFactor = 1.0
             session.sessionPreset = preset
         } else {
             input.scaleFactor = 0.505
