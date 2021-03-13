@@ -65,7 +65,8 @@ extension ScreenRecorder: AVCaptureFileOutputRecordingDelegate {
             guard let self = self else {
                 return
             }
-            self.delegate?.screenRecorder(recorder: self, didStateChange: .finish(url))
+            let state: MainView.ViewState = url == nil ? .error : .finish
+            self.delegate?.screenRecorder(recorder: self, didStateChange: state)
         }
     }
 }

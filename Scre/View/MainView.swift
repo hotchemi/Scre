@@ -2,11 +2,12 @@ import SwiftUI
 
 struct MainView: View {
     enum ViewState {
+        case idle
         case start
         case recording
         case stop
-        case finish(URL?)
-        case idle
+        case finish
+        case error
     }
     // TODO: move to ViewModel
     private let screenRecorder = ScreenRecorder()
@@ -18,7 +19,8 @@ struct MainView: View {
     @State private var recordButtonText = "play.fill"
     @State private var isActionButtonDisabled = false
     @State private var isProgressHidden = true
-    @State private var showPopover: Bool = false
+    @State private var showPopover = false
+    @State private var showAlert = false
     @State var state: ViewState = .idle {
         didSet {
             DispatchQueue.main.async {
@@ -90,6 +92,11 @@ struct MainView: View {
                 }
                 .padding(8)
                 .background(Color(NSColor.windowBackgroundColor))
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Error"),
+                          message: Text("Sorry, something wrong has happenned.")
+                    )
+                }
             }
             ProgressView().isHidden(isProgressHidden)
         }.navigationTitle(timerHolder.navigationTitle)
@@ -113,6 +120,12 @@ struct MainView: View {
     
     private func handleStateChanged() {
         switch state {
+        case .idle:
+            recordButtonText = "play.fill"
+            delegate.window?.toggleMoving(enabled: true)
+            isProgressHidden = true
+            timerHolder.navigationTitle = delegate.window?.sizeAsTitle() ?? ""
+            isActionButtonDisabled = false
         case .start:
             let closure = {
                 screenRecorder.delegate = self
@@ -141,16 +154,13 @@ struct MainView: View {
             timerHolder.navigationTitle = "Converting to GIF..."
             timerHolder.stop()
             isActionButtonDisabled = true
-        case .finish(_):
+        case .finish:
             state = .idle
             isProgressHidden = false
             isActionButtonDisabled = false
-        case .idle:
-            recordButtonText = "play.fill"
-            delegate.window?.toggleMoving(enabled: true)
-            isProgressHidden = true
-            timerHolder.navigationTitle = delegate.window?.sizeAsTitle() ?? ""
-            isActionButtonDisabled = false
+        case .error:
+            state = .idle
+            showAlert = true
         }
     }
 }
