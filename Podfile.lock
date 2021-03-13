@@ -1,16 +1,16 @@
 PODS:
-  - NSGIF (1.2.4)
+  - Regift (1.6.0)
 
 DEPENDENCIES:
-  - NSGIF (~> 1.0)
+  - Regift
 
 SPEC REPOS:
   trunk:
-    - NSGIF
+    - Regift
 
 SPEC CHECKSUMS:
-  NSGIF: 442808fd1667ebac3d09046c3f6d4bdd6720cded
+  Regift: a7c1a7e377c60bfc34301d6f532e099e5ae109a8
 
-PODFILE CHECKSUM: 1e6cf2731c3fc0bef625f5ebc2a012076bd8dd0e
+PODFILE CHECKSUM: 399285fd0af35a126e4a9881ad289a493b33cc90
 
 COCOAPODS: 1.10.0

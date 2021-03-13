@@ -5,25 +5,25 @@ enum FrameRate: Int, CaseIterable {
     case medium
     case low
     
-    var frameCount: Int32 {
+    var frameRate: Int {
         switch self {
         case .high:
-            return 90
-        case .medium:
-            return 60
-        case .low:
             return 30
+        case .medium:
+            return 15
+        case .low:
+            return 8
         }
     }
     
     var label: String {
         switch self {
         case .high:
-            return "High"
+            return "High(\(frameRate))"
         case .medium:
-            return "Middle"
+            return "Middle(\(frameRate))"
         case .low:
-            return "Low"
+            return "Low(\(frameRate))"
         }
     }
 }

@@ -31,7 +31,7 @@ struct Config {
         userDefaults.bool(forKey: Key.mouseButtonPress.rawValue)
     }
     
-    var repeatAllowed: Int32 {
+    var repeatAllowed: Int {
         userDefaults.bool(forKey: Key.repeatAllowed.rawValue) ? 0 : 1
     }
     
@@ -39,7 +39,7 @@ struct Config {
         PixelSize(rawValue: userDefaults.integer(forKey: Key.pixelSize.rawValue))?.preset
     }
     
-    var frameCount: Int32 {
-        FrameRate(rawValue: userDefaults.integer(forKey: Key.frameRate.rawValue))?.frameCount ?? FrameRate.high.frameCount
+    var frameRate: Int {
+        FrameRate(rawValue: userDefaults.integer(forKey: Key.frameRate.rawValue))?.frameRate ?? FrameRate.medium.frameRate
     }
 }

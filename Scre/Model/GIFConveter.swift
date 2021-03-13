@@ -1,5 +1,5 @@
 import Foundation
-import NSGIF
+import Regift
 
 final class GIFConverter {
     typealias Completion = (URL?) -> Void
@@ -14,9 +14,9 @@ final class GIFConverter {
         }
     }
     
-    func save(videoUrl: URL, completion: @escaping Completion) {
-        NSGIF.createGIFfromURL(videoUrl, withFrameCount: config.frameCount, delayTime: 0, loopCount: config.repeatAllowed){ [weak self] url in
-            self?.copy(url: url, completion: completion)
+    func save(videoUrl: URL, duration: Float, completion: @escaping Completion) {
+        Regift.createGIFFromSource(videoUrl, startTime: 0, duration: duration, frameRate: config.frameRate, loopCount: config.repeatAllowed) { url in
+            self.copy(url: url, completion: completion)
         }
     }
     

@@ -1,6 +1,6 @@
 target 'Scre' do
   use_frameworks!
-  pod "NSGIF", "~> 1.0"
+  pod "Regift"
 
   target 'ScreTests' do
     inherit! :search_paths

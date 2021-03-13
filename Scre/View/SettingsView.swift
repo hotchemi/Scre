@@ -12,7 +12,7 @@ struct GeneralSettingsView: View {
     @AppStorage(Config.Key.mouseButtonPress.rawValue) private var mouseButtonPress = true
     @AppStorage(Config.Key.repeatAllowed.rawValue) private var repeatAllowed = true
     @AppStorage(Config.Key.pixelSize.rawValue) private var pixelSize = PixelSize.original.rawValue
-    @AppStorage(Config.Key.frameRate.rawValue) private var frameRate = FrameRate.high.rawValue
+    @AppStorage(Config.Key.frameRate.rawValue) private var frameRate = FrameRate.medium.rawValue
     @AppStorage(Config.Key.location.rawValue) private var location = ""
     
     var body: some View {
@@ -28,14 +28,15 @@ struct GeneralSettingsView: View {
                     Text(size.label).tag(size.rawValue)
                 }
             }
-            .frame(width: 150)
+            .frame(width: 160)
             Picker(selection: $frameRate, label: Text("Frame Rate")) {
                 ForEach(FrameRate.allCases, id: \.self) {rate in
                     Text(rate.label).tag(rate.rawValue)
                 }
             }
-            .frame(width: 150)
+            .frame(width: 170)
         }
+        .navigationTitle("Preferences")
         .frame(width: 350)
         .padding()
     }
