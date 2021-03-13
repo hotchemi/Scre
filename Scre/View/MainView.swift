@@ -16,6 +16,7 @@ struct MainView: View {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     @ObservedObject private var timerHolder = TimerHolder()
     @State private var recordButtonText = "play.fill"
+    @State private var isActionButtonDisabled = false
     @State private var isProgressHidden = true
     @State private var showPopover: Bool = false
     @State var state: ViewState = .idle {
@@ -48,10 +49,12 @@ struct MainView: View {
                         }
                     }, label: {
                         Image(systemName: recordButtonText)
-                    }).keyboardShortcut("s", modifiers: [.command])
+                    })
+                    .keyboardShortcut("s", modifiers: [.command])
+                    .disabled(isActionButtonDisabled)
                     Spacer()
                     Button(action: {
-                        showPopover = true
+                        showPopover.toggle()
                     }, label: {
                         Image(systemName: "macwindow")
                     })
@@ -64,9 +67,9 @@ struct MainView: View {
                         let windows = WindowServer.getWindows()
                         let apps = windows.map { NSRunningApplication(processIdentifier: pid_t($0.pid)) }
                         List {
-                            ForEach(0 ..< windows.count) { index in
+                            ForEach(0 ..< windows.count, id: \.self) { index in
                                 Button(action: {
-                                    showPopover = false
+                                    showPopover.toggle()
                                     guard let screen = NSScreen.main?.frame else {
                                         return
                                     }
@@ -77,11 +80,10 @@ struct MainView: View {
                                     let rect = CGRect(x: x, y: y, width: width, height: height)
                                     delegate.window?.setFrame(rect, display: true, animate: true)
                                 }) {
-                                    HStack {
-                                        Image(nsImage: (apps[index]?.icon)!)
-                                        Text(apps[index]?.localizedName ?? "")
-                                    }
-                                }.buttonStyle(PlainButtonStyle())
+                                    Image(nsImage: (apps[index]?.icon)!)
+                                    Text(apps[index]?.localizedName ?? "")
+                                }
+                                .buttonStyle(PlainButtonStyle())
                             }
                         }
                     }
@@ -119,6 +121,7 @@ struct MainView: View {
                 isProgressHidden = true
                 delegate.window?.toggleMoving(enabled: false)
                 timerHolder.navigationTitle = "Record will start..."
+                isActionButtonDisabled = true
             }
             if alwaysAskFilePath {
                 openSavePanel(successHandler: closure) {
@@ -131,19 +134,23 @@ struct MainView: View {
             recordButtonText = "stop.fill"
             isProgressHidden = true
             timerHolder.start()
+            isActionButtonDisabled = false
         case .stop:
             screenRecorder.stop()
             isProgressHidden = false
             timerHolder.navigationTitle = "Converting to GIF..."
             timerHolder.stop()
+            isActionButtonDisabled = true
         case .finish(_):
             state = .idle
             isProgressHidden = false
+            isActionButtonDisabled = false
         case .idle:
             recordButtonText = "play.fill"
             delegate.window?.toggleMoving(enabled: true)
             isProgressHidden = true
             timerHolder.navigationTitle = delegate.window?.sizeAsTitle() ?? ""
+            isActionButtonDisabled = false
         }
     }
 }
