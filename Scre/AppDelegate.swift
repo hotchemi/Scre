@@ -11,7 +11,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         guard let window = window else {
             return
         }
-        window.setFrame(NSRectFromString(windowFrame), display: true)
+        window.setInitialFrame(prevRect: NSRectFromString(windowFrame))
         window.setSizeAsTitle()
         window.tabbingMode = .disallowed
         window.isOpaque = false
