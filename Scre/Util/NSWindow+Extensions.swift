@@ -23,6 +23,18 @@ extension NSWindow {
     func sizeAsTitle() -> String {
         return "Size: \(frame.size.width.description) × \(frame.size.height.description)"
     }
+    
+    func setInitialFrame(prevRect: CGRect) {
+        if prevRect == .zero, let screenSize = screen?.visibleFrame.size {
+            let width: CGFloat = 400
+            let height: CGFloat = 600
+            let x = (screenSize.width - prevRect.size.width) / 2 - (width / 2)
+            let y = (screenSize.height - prevRect.size.height) / 2 - (height / 2)
+            setFrame(CGRect(x: x, y: y, width: width, height: height), display: true)
+        } else {
+            setFrame(frame, display: true)
+        }
+    }
 }
 
 extension View {
