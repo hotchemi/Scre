@@ -43,3 +43,13 @@ brew install scre
 <p align="center">
 <image src="https://github.com/hotchemi/Scre/blob/master/images/preference.png" width="480"
 </p>
+
+## Build
+
+You need CocoaPods to resolve dependencies.
+
+```sh
+pod install
+```
+
+And open `Scre.xcworkspace` on XCode and here you go!
